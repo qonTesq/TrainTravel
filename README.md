@@ -8,25 +8,7 @@ A lightweight Windows Forms (VB.NET) desktop application that demonstrates core 
 
 > Educational / demo project – intentionally scoped and simplified.
 
----
-
-## 🧾 Table of Contents
-
-- [🧾 Overview](#-overview)
-- [✨ Feature Highlights](#-feature-highlights)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [🧱➡️ Architecture & Flow](#️-architecture--flow)
-- [🗄️ Database Schema](#️-database-schema)
-- [📁 Project Structure](#-project-structure)
-- [⚙️ Setup & Installation](#️-setup--installation)
-- [▶️ Running the App](#️-running-the-app)
-- [🧑‍💻 Usage Walkthrough](#-usage-walkthrough)
-- [🛡️ Error Handling & Validation](#️-error-handling--validation)
-- [📸 Screenshots](#-screenshots)
-
----
-
-## 🧾 Overview
+## Overview
 
 TrainTravel simulates a minimal reservation layer over a static railway network:
 
@@ -34,9 +16,7 @@ TrainTravel simulates a minimal reservation layer over a static railway network:
 - Each train has a small fixed capacity (5 seats) to make overbooking and seat overlap logic easy to observe.
 - Bookings consider only the segment traveled (origin → destination) and do not "consume" seats for segments the passenger does not ride.
 
----
-
-## ✨ Feature Highlights
+## Feature Highlights
 
 - Welcome screen with entry navigation
 - Train search by:
@@ -51,9 +31,7 @@ TrainTravel simulates a minimal reservation layer over a static railway network:
 - Modular helper functions for data access
 - Easily adjustable capacity logic
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer         | Technology                                                    |
 | ------------- | ------------------------------------------------------------- |
@@ -64,9 +42,7 @@ TrainTravel simulates a minimal reservation layer over a static railway network:
 | IDE           | Visual Studio                                                 |
 | UI Components | Standard WinForms + (optional) `Guna.UI2.dll` styling library |
 
----
-
-## 🧱➡️ Architecture & Flow
+## Architecture & Flow
 
 1. User launches application → `WelcomeForm`
 2. User proceeds to booking → `MainForm`
@@ -79,9 +55,7 @@ TrainTravel simulates a minimal reservation layer over a static railway network:
 7. Insert booking row(s) into `Bookings` table
 8. Refresh availability
 
----
-
-## 🗄️ Database Schema
+## Database Schema
 
 Minimal conceptual schema (field names illustrative – adjust to actual implementation):
 
@@ -125,9 +99,7 @@ Minimal conceptual schema (field names illustrative – adjust to actual impleme
 
 > If multiple passengers are treated individually, you could later expand to a `BookingPassengers` table.
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 | File / Folder                    | Purpose                              |
 | -------------------------------- | ------------------------------------ |
@@ -140,9 +112,7 @@ Minimal conceptual schema (field names illustrative – adjust to actual impleme
 | `LICENSE.txt`                    | License                              |
 | `README.md`                      | This documentation                   |
 
----
-
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 ### 1. Prerequisites
 
@@ -177,9 +147,7 @@ Provider=Microsoft.ACE.OLEDB.12.0;Data Source={calculatedPath}\RailwayReservatio
 If you get a provider error, install:  
 Microsoft Access Database Engine 2010 or 2016 Redistributable.
 
----
-
-## ▶️ Running the App
+## Running the App
 
 1. Open the solution in Visual Studio.
 2. Restore any missing references (e.g., add `Guna.UI2.dll` if used).
@@ -187,9 +155,7 @@ Microsoft Access Database Engine 2010 or 2016 Redistributable.
 4. Run (`F5`).  
    You should see the Welcome screen.
 
----
-
-## 🧑‍💻 Usage Walkthrough
+## Usage Walkthrough
 
 1. Launch app → Welcome screen.
 2. Click "Book".
@@ -204,9 +170,7 @@ Microsoft Access Database Engine 2010 or 2016 Redistributable.
 6. Select train (UI dependent – e.g., row selection).
 7. Confirm booking → success message if seats available.
 
----
-
-## 🛡️ Error Handling & Validation
+## Error Handling & Validation
 
 | Scenario                      | Handling                                   |
 | ----------------------------- | ------------------------------------------ |
@@ -217,8 +181,6 @@ Microsoft Access Database Engine 2010 or 2016 Redistributable.
 | Overlapping bookings conflict | Recomputes availability just before commit |
 
 Graceful degradation ensures the app does not crash on common user mistakes.
-
----
 
 ## 📸 Screenshots
 
